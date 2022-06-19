@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.app {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.board {
+	width: calc(64px * 8);
+	height: calc(64px * 8);
+	display: flex;
+	flex-wrap: wrap;
+	// border: 10px solid rgb(202, 201, 201);
+
+	.cell {
+		width: 64px;
+		height: 64px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& img {
+			width: 48px;
+			height: 48px;
+			position: relative;
+		}
+		&.selected {
+			background-color: skyblue;
+		}
+		&.green {
+			background-color: green;
+		}
+	}
+	.black {
+		background-color: crimson;
+	}
+	.white {
+		background-color: rgb(247, 187, 199);
+	}
+}
+.available {
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	background-color: #22c022;
+}
