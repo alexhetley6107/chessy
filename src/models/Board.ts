@@ -6,7 +6,6 @@ import { Pawn } from './figures/Pawn';
 import { King } from './figures/King';
 import { Bishop } from './figures/Bishop';
 import { Rook } from './figures/Rook';
-import { constants } from 'zlib';
 
 export class Board {
 	cells: Cell[][] = [];

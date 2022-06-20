@@ -12,7 +12,7 @@ export enum FigureNames {
 	BISHOP = 'Слон',
 }
 
-export class Figure {
+export abstract class Figure {
 	color: Colors;
 	logo: typeof logo | null;
 	cell: Cell;
@@ -28,10 +28,13 @@ export class Figure {
 		this.id = Math.random();
 	}
 
-	canMove(cell: Cell): boolean {
+	canMove(target: Cell): boolean {
+		if (target.figure?.color === this.color) return false;
+
+		if (target.figure?.name === FigureNames.KING) return false;
+
 		return true;
 	}
-	moveFigure(cell: Cell): boolean {
-		return true;
-	}
+
+	moveFigure(target: Cell) {}
 }
